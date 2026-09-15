@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de privacidade | Arantes — Medicina da Pele</title>
+<meta name="description" content="Projeto fictício de portfólio. Como a Arantes — Medicina da Pele trata dados pessoais e dados de saúde de pacientes e visitantes, conforme a LGPD e o sigilo médico.">
+<!-- Marca, telefone e registros são fictícios: manter noindex enquanto for demonstração -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://arantesdermato.zevro.app/privacidade.html">
+<meta name="theme-color" content="#1E3430">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Arantes — Medicina da Pele">
+<meta property="og:title" content="Política de privacidade | Arantes — Medicina da Pele">
+<meta property="og:description" content="Projeto fictício de portfólio. Como tratamos dados pessoais e dados de saúde, conforme a LGPD e o sigilo médico.">
+<meta property="og:url" content="https://arantesdermato.zevro.app/privacidade.html">
+<meta property="og:image" content="https://arantesdermato.zevro.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* Tokens e estilos base iguais aos do index.html, sem a camada de movimento */
+:root {
+  --color-bg: #F5F3EE;
+  --color-surface: #E9E7E1;
+  --color-primary: #1E3430;
+  --color-primary-deep: #16271F;
+  --color-text: #23272A;
+  --color-muted: #5C605D;
+  --color-line: #CFCCC4;
+  --color-on-dark-muted: #B9C0B7;
+  --color-on-dark-line: #34504A;
+
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Red Hat Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-display: clamp(2.5rem, 1.7rem + 3.2vw, 4.25rem);  /* 40 → 68 */
+  --text-h3: clamp(1.375rem, 1.2rem + 0.55vw, 1.75rem);
+  --text-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --text-base: clamp(1rem, 0.975rem + 0.1vw, 1.0625rem);
+  --text-small: clamp(0.8125rem, 0.8rem + 0.06vw, 0.875rem);
+
+  --max: 1320px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --col-gap: clamp(16px, 2.2vw, 32px);
+  --space-content: clamp(80px, 8vw, 120px);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --dur-press: 140ms;
+  --dur-ui: 220ms;
+  --header-h: 88px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-underline-offset: 3px; }
+ul, ol { list-style: none; }
+em { font-style: italic; }
+b, strong { font-weight: 500; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--color-bg); }
+
+.skip {
+  position: absolute; left: var(--gutter); top: -100px; z-index: 100;
+  background: var(--color-primary); color: var(--color-bg);
+  padding: 12px 18px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); }
+
+.label {
+  font-size: var(--text-small); font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--color-muted); line-height: 1.4;
+}
+.display {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: var(--text-display); line-height: 1.04; letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72;
+}
+.lead { font-size: var(--text-lead); line-height: 1.55; color: var(--color-muted); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 13px 24px;
+  background: var(--color-primary); color: var(--color-bg);
+  border-radius: 2px;
+  font-size: 0.9375rem; font-weight: 500; letter-spacing: 0.01em; line-height: 1.2;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color var(--dur-ui) ease, transform var(--dur-press) var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+
+/* ========== AVISO DE DEMONSTRAÇÃO ========== */
+.demo-note {
+  background: var(--color-primary); color: var(--color-bg);
+  padding: 8px var(--gutter);
+  font-size: var(--text-small); line-height: 1.45; text-align: center;
+}
+
+/* Cabeçalho */
+.header { position: sticky; top: 0; z-index: 50; background: var(--color-bg); border-bottom: 1px solid var(--color-line); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: var(--header-h); }
+.brand { text-decoration: none; display: inline-block; line-height: 1; }
+.brand__name {
+  display: block; font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.7875rem);
+  font-weight: 400; letter-spacing: 0.14em; font-variation-settings: "opsz" 28;
+}
+.brand__sub {
+  display: block; margin-top: 5px;
+  font-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.89375rem);
+  letter-spacing: 0.08em; color: var(--color-muted);
+}
+.back { font-size: 0.9375rem; padding-block: 12px; }
+.header .btn { display: none; }
+@media (min-width: 768px) {
+  .back { display: none; }
+  .header .btn { display: inline-flex; }
+}
+
+/* Conteúdo */
+.policy { padding-block: clamp(56px, 7vw, 104px) var(--space-content); }
+.policy__head { grid-column: 1 / -1; margin-bottom: 48px; }
+.policy__head .display { margin: 20px 0 24px; max-width: 16ch; }
+.policy__head .lead { max-width: 52ch; }
+.policy__meta { margin-top: 24px; font-size: var(--text-small); color: var(--color-muted); }
+
+.toc { grid-column: 1 / -1; margin-bottom: 48px; border-top: 1px solid var(--color-line); }
+.toc .label { padding: 18px 0 10px; }
+.toc ol { counter-reset: toc; }
+.toc li { counter-increment: toc; border-bottom: 1px solid var(--color-line); }
+.toc a { display: grid; grid-template-columns: 32px 1fr; padding: 10px 0; text-decoration: none; font-size: 0.9375rem; line-height: 1.45; }
+.toc a::before { content: counter(toc, decimal-leading-zero); color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+.policy__body { grid-column: 1 / -1; max-width: 68ch; }
+.policy__body section { padding-top: 40px; margin-top: 40px; border-top: 1px solid var(--color-line); }
+.policy__body section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+.policy__body h2 {
+  display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: baseline;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--text-h3); line-height: 1.2; font-variation-settings: "opsz" 28;
+  margin-bottom: 20px;
+}
+.policy__body h2 span { font-weight: 300; color: var(--color-muted); font-variant-numeric: lining-nums; }
+.policy__body h3 { font-size: var(--text-base); font-weight: 500; margin: 28px 0 8px; }
+.policy__body p + p { margin-top: 1em; }
+.policy__body ul { margin-top: 16px; border-top: 1px solid var(--color-line); }
+.policy__body ul li { padding: 12px 0 12px 20px; border-bottom: 1px solid var(--color-line); position: relative; }
+.policy__body ul li::before { content: "—"; position: absolute; left: 0; color: var(--color-muted); }
+
+.contact-card { margin-top: 20px; padding: 24px 28px; background: var(--color-surface); }
+.contact-card p + p { margin-top: 0.4em; }
+.policy__body ul + p, .contact-card + p { margin-top: 20px; }
+
+@media (min-width: 1024px) {
+  .policy__head { grid-column: 1 / 10; margin-bottom: 72px; }
+  .toc { grid-column: 1 / 4; margin: 0; align-self: start; position: sticky; top: calc(var(--header-h) + 32px); }
+  .policy__body { grid-column: 5 / 12; }
+}
+
+/* Rodapé (versão curta) */
+.footer {
+  background: var(--color-primary-deep); color: var(--color-bg);
+  padding: 56px 0 calc(40px + env(safe-area-inset-bottom, 0px));
+  font-size: var(--text-small); line-height: 1.6;
+}
+.footer__inner { display: grid; gap: 24px; }
+.footer__muted { color: var(--color-on-dark-muted); }
+.footer .brand__sub { color: var(--color-on-dark-muted); }
+.footer__bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  padding-top: 24px; border-top: 1px solid var(--color-on-dark-line);
+  color: var(--color-on-dark-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { background: #15261F; }
+  .toc a:hover { text-decoration: underline; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:active { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<p class="demo-note">Projeto fictício de portfólio. A clínica, as profissionais, os registros, os depoimentos e os contatos são inventados; as fotos são de banco de imagens.</p>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="index.html" aria-label="Arantes — Medicina da Pele, página inicial">
+      <span class="brand__name">ARANTES</span>
+      <span class="brand__sub">Medicina da Pele</span>
+    </a>
+    <a class="back" href="index.html">Voltar ao site</a>
+    <a class="btn" href="index.html#agendar">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="conteudo" class="policy">
+  <div class="wrap grid">
+    <div class="policy__head">
+      <p class="label">Documento legal</p>
+      <h1 class="display">Política de privacidade</h1>
+      <p class="lead">Na dermatologia, boa parte do que sabemos sobre você é dado de saúde. Esta página explica, sem rodeios, o que coletamos, por que, com quem compartilhamos e como exercer os seus direitos.</p>
+      <p class="policy__meta">Versão de 15 de setembro de 2026 · Em conformidade com a Lei nº 13.709/2018 (LGPD)</p>
+    </div>
+
+    <nav class="toc" aria-label="Seções desta política">
+      <p class="label">Nesta página</p>
+      <ol>
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#dados">Dados que tratamos</a></li>
+        <li><a href="#finalidades">Para que usamos e com qual base legal</a></li>
+        <li><a href="#compartilhamento">Com quem compartilhamos</a></li>
+        <li><a href="#site">Este site, cookies e serviços de terceiros</a></li>
+        <li><a href="#guarda">Por quanto tempo guardamos</a></li>
+        <li><a href="#seguranca">Segurança e sigilo médico</a></li>
+        <li><a href="#direitos">Seus direitos</a></li>
+        <li><a href="#encarregado">Encarregado de dados</a></li>
+        <li><a href="#alteracoes">Alterações nesta política</a></li>
+      </ol>
+    </nav>
+
+    <div class="policy__body">
+      <section id="quem-somos" aria-labelledby="t1">
+        <h2 id="t1"><span>01</span> Quem somos</h2>
+        <p>A controladora dos dados é a <b>Arantes Medicina da Pele Ltda.</b>, inscrita no CNPJ sob o nº 00.000.000/0000-00, com sede na Alameda Lorena, 716, Jardim Paulista, São Paulo – SP, CEP 01424-002. A responsável técnica é a Dra. Helena Arantes, dermatologista, CRM-SP 00.000, RQE 00.000.</p>
+        <p>Esta política vale para o atendimento na clínica, para o contato por telefone e WhatsApp e para este site.</p>
+      </section>
+
+      <section id="dados" aria-labelledby="t2">
+        <h2 id="t2"><span>02</span> Dados que tratamos</h2>
+        <h3>Quando você entra em contato ou agenda</h3>
+        <ul>
+          <li>Nome, telefone, e-mail e a mensagem que você nos envia.</li>
+          <li>Data e horário de preferência para a avaliação.</li>
+        </ul>
+        <h3>Quando você se torna paciente</h3>
+        <ul>
+          <li>Dados de cadastro: nome completo, CPF, data de nascimento, endereço e contatos.</li>
+          <li>Prontuário médico: histórico de saúde, medicamentos em uso, procedimentos anteriores, exame da pele, plano de tratamento e evolução.</li>
+          <li>Imagens clínicas do mapeamento da pele, usadas para comparar a evolução entre as revisões.</li>
+          <li>Dados de pagamento e emissão de nota fiscal.</li>
+        </ul>
+        <p>Dados de saúde e imagens clínicas são <b>dados pessoais sensíveis</b> pela LGPD e recebem proteção reforçada. Não tratamos dados de menores de 18 anos sem a presença e a autorização de um responsável legal.</p>
+      </section>
+
+      <section id="finalidades" aria-labelledby="t3">
+        <h2 id="t3"><span>03</span> Para que usamos e com qual base legal</h2>
+        <ul>
+          <li><b>Responder ao seu contato e agendar a avaliação</b> — procedimentos preliminares à prestação do serviço, a seu pedido (art. 7º, V).</li>
+          <li><b>Realizar o atendimento, manter o prontuário e acompanhar a evolução</b> — tutela da saúde, em procedimento feito por profissionais de saúde (art. 11, II, “f”), e cumprimento de obrigação legal e regulatória de guarda do prontuário (art. 11, II, “a”).</li>
+          <li><b>Confirmar consultas e enviar orientações de pós-procedimento</b> — execução do serviço contratado (art. 7º, V) e tutela da saúde.</li>
+          <li><b>Cobrança, nota fiscal e obrigações contábeis</b> — cumprimento de obrigação legal (art. 7º, II).</li>
+          <li><b>Defesa em processos</b> — exercício regular de direitos (art. 7º, VI, e art. 11, II, “d”).</li>
+        </ul>
+        <p>Não usamos seus dados para publicidade e <b>não publicamos imagens nem nomes de pacientes</b>. Os depoimentos deste site foram cedidos por escrito, com nome abreviado. Qualquer outro uso de imagem dependeria do seu consentimento específico, que pode ser recusado sem nenhum efeito sobre o seu atendimento.</p>
+      </section>
+
+      <section id="compartilhamento" aria-labelledby="t4">
+        <h2 id="t4"><span>04</span> Com quem compartilhamos</h2>
+        <p>Não vendemos nem cedemos dados. Compartilhamos apenas o necessário, com:</p>
+        <ul>
+          <li>Fornecedor do sistema de prontuário eletrônico e agenda, que atua sob nossas instruções e com obrigação de sigilo.</li>
+          <li>Laboratórios e serviços de exame, quando houver pedido médico.</li>
+          <li>Instituições de pagamento e escritório de contabilidade, só com dados financeiros e de cadastro.</li>
+          <li>Autoridades públicas, quando houver obrigação legal ou ordem judicial.</li>
+        </ul>
+        <p>Alguns desses fornecedores podem armazenar dados em servidores fora do Brasil. Nesses casos, exigimos garantias de proteção compatíveis com a LGPD (art. 33).</p>
+      </section>
+
+      <section id="site" aria-labelledby="t5">
+        <h2 id="t5"><span>05</span> Este site, cookies e serviços de terceiros</h2>
+        <p>Este site não tem formulários, não pede login e <b>não usa cookies</b> nem ferramentas de rastreamento ou publicidade. Por isso não exibimos aviso de cookies.</p>
+        <p>Ainda assim, ao abrir a página, o seu navegador se conecta a alguns serviços externos, que recebem dados técnicos como endereço IP e tipo de navegador:</p>
+        <ul>
+          <li><b>Servidor de hospedagem</b>, que registra acessos para segurança e funcionamento. Guardamos esses registros por seis meses, como exige o Marco Civil da Internet (Lei nº 12.965/2014, art. 15).</li>
+          <li><b>Google Fonts</b>, de onde vêm as fontes do texto.</li>
+          <li><b>Unsplash</b>, de onde vêm as fotografias.</li>
+        </ul>
+      </section>
+
+      <section id="guarda" aria-labelledby="t6">
+        <h2 id="t6"><span>06</span> Por quanto tempo guardamos</h2>
+        <ul>
+          <li><b>Prontuário e imagens clínicas:</b> no mínimo 20 anos a partir do último registro, conforme a Lei nº 13.787/2018 e as normas do Conselho Federal de Medicina.</li>
+          <li><b>Contatos que não resultaram em consulta:</b> até seis meses depois da última mensagem.</li>
+          <li><b>Documentos fiscais e contábeis:</b> pelo prazo exigido na legislação tributária, em geral cinco anos.</li>
+          <li><b>Registros de acesso ao site:</b> seis meses.</li>
+        </ul>
+        <p>Terminado o prazo, os dados são eliminados ou anonimizados.</p>
+      </section>
+
+      <section id="seguranca" aria-labelledby="t7">
+        <h2 id="t7"><span>07</span> Segurança e sigilo médico</h2>
+        <p>Todo o corpo clínico e a equipe administrativa estão sujeitos ao sigilo profissional previsto no Código de Ética Médica e a termos de confidencialidade. O prontuário eletrônico tem acesso individual, com senha e registro de quem consultou cada informação, e só médicas e enfermeiras envolvidas no seu atendimento veem os dados clínicos.</p>
+        <p>Se ocorrer um incidente de segurança que possa trazer risco ou dano relevante, comunicaremos você e a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+      </section>
+
+      <section id="direitos" aria-labelledby="t8">
+        <h2 id="t8"><span>08</span> Seus direitos</h2>
+        <p>Pelo art. 18 da LGPD, você pode, a qualquer momento e sem custo:</p>
+        <ul>
+          <li>Confirmar se tratamos seus dados e ter acesso a eles, inclusive a uma cópia do prontuário.</li>
+          <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+          <li>Pedir anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desacordo com a lei.</li>
+          <li>Pedir a portabilidade dos dados a outro profissional ou serviço.</li>
+          <li>Saber com quem compartilhamos seus dados.</li>
+          <li>Revogar um consentimento que tenha dado.</li>
+          <li>Apresentar reclamação à ANPD.</li>
+        </ul>
+        <p>O prontuário não pode ser eliminado antes do prazo legal de guarda, mesmo a pedido, mas continua disponível para consulta e cópia.</p>
+      </section>
+
+      <section id="encarregado" aria-labelledby="t9">
+        <h2 id="t9"><span>09</span> Encarregado de dados</h2>
+        <p>Para exercer seus direitos ou tirar dúvidas sobre esta política, fale com o nosso encarregado pelo tratamento de dados pessoais. Respondemos em até 15 dias.</p>
+        <div class="contact-card">
+          <p><b>Ricardo Menezes</b> — Encarregado de dados (DPO)</p>
+          <p>privacidade@arantesdermato.zevro.app</p>
+          <p>Telefone (11) 0000-0000</p>
+          <p>Alameda Lorena, 716 — Jardim Paulista, São Paulo – SP, 01424-002</p>
+        </div>
+        <p>Para proteger seus dados, podemos pedir confirmação de identidade antes de atender a um pedido.</p>
+      </section>
+
+      <section id="alteracoes" aria-labelledby="t10">
+        <h2 id="t10"><span>10</span> Alterações nesta política</h2>
+        <p>Podemos atualizar esta política quando mudarem nossos serviços, fornecedores ou a legislação. A data da versão em vigor fica sempre no topo desta página. Mudanças relevantes para pacientes em acompanhamento serão avisadas também pelos contatos cadastrados.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="footer on-dark">
+  <div class="wrap footer__inner">
+    <span class="brand">
+      <span class="brand__name">ARANTES</span>
+      <span class="brand__sub">Medicina da Pele</span>
+    </span>
+    <p class="footer__muted">Responsável técnica: Dra. Helena Arantes — Dermatologista · CRM-SP 00.000 · RQE 00.000<br>Arantes Medicina da Pele Ltda. · CNPJ 00.000.000/0000-00</p>
+    <div class="footer__bottom">
+      <span>© 2026 Arantes — Medicina da Pele. Projeto fictício de portfólio.</span>
+      <a href="index.html">Voltar à página inicial</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

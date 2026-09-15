@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dermatologia e longevidade da pele nos Jardins | Arantes</title>
+<meta name="description" content="Projeto fictício de portfólio: dermatologia nos Jardins, em São Paulo, dedicada à longevidade da pele: avaliação diagnóstica de 90 minutos, doses conservadoras e acompanhamento ao longo do ano.">
+<!-- Marca, telefone e registros são fictícios: manter noindex enquanto for demonstração -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://arantesdermato.zevro.app/">
+<meta name="theme-color" content="#1E3430">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Arantes — Medicina da Pele">
+<meta property="og:title" content="Dermatologia e longevidade da pele nos Jardins | Arantes">
+<meta property="og:description" content="Projeto fictício de portfólio. Avaliação diagnóstica de 90 minutos, doses conservadoras e acompanhamento ao longo do ano, na Alameda Lorena, em São Paulo.">
+<meta property="og:url" content="https://arantesdermato.zevro.app/">
+<meta property="og:image" content="https://arantesdermato.zevro.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arantes — Medicina da Pele: “A pele envelhece. Com critério, envelhece bem.” ao lado do retrato de uma mulher olhando pela janela">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dermatologia e longevidade da pele nos Jardins | Arantes">
+<meta name="twitter:description" content="Projeto fictício de portfólio. Avaliação diagnóstica de 90 minutos, doses conservadoras e acompanhamento ao longo do ano, na Alameda Lorena, em São Paulo.">
+<meta name="twitter:image" content="https://arantesdermato.zevro.app/og-image.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ========== TOKENS ========== */
+:root {
+  /* Cores (plano-design.md, seção 2) */
+  --color-bg: #F5F3EE;          /* Papel */
+  --color-surface: #E9E7E1;     /* Névoa */
+  --color-primary: #1E3430;     /* Petróleo profundo */
+  --color-primary-deep: #16271F;/* Rodapé */
+  --color-secondary: #8A9788;   /* Sálvia cinza: só decorativo ou texto ≥ 24px sobre Petróleo */
+  --color-secondary-text: #7A8978; /* Sálvia escurecida para texto grande sobre Papel (3,3:1) */
+  --color-text: #23272A;        /* Grafite */
+  --color-muted: #5C605D;       /* Grafite claro */
+  --color-line: #CFCCC4;        /* Fio */
+  --color-line-strong: #B9B5AC; /* Fio sobre Névoa */
+  --color-on-dark-muted: #B9C0B7; /* Texto secundário sobre Petróleo (7,1:1) */
+  --color-on-dark-line: #34504A;
+
+  /* Tipografia */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Red Hat Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);  /* 44 → 88 */
+  --text-h2: clamp(2rem, 1.35rem + 2.6vw, 3.5rem);         /* 32 → 56 */
+  --text-h3: clamp(1.375rem, 1.2rem + 0.55vw, 1.75rem);    /* 22 → 28 */
+  --text-quote: clamp(1.625rem, 1.2rem + 1.7vw, 2.5rem);   /* 26 → 40 */
+  --text-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);/* 18 → 21 */
+  --text-base: clamp(1rem, 0.975rem + 0.1vw, 1.0625rem);   /* 16 → 17 */
+  --text-small: clamp(0.8125rem, 0.8rem + 0.06vw, 0.875rem);/* 13 → 14 */
+
+  /* Grade */
+  --max: 1320px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --col-gap: clamp(16px, 2.2vw, 32px);
+
+  /* Ritmo vertical (variado por tipo de seção) */
+  --space-breath: clamp(112px, 12vw, 200px);
+  --space-content: clamp(80px, 8vw, 120px);
+  --space-chain: clamp(40px, 4vw, 64px);
+
+  /* Movimento (plano-design.md, seção 7) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-press: 140ms;
+  --dur-ui: 220ms;
+  --dur-reveal: 700ms;
+  --dur-curtain: 1100ms;
+
+  --header-h: 88px;
+}
+
+/* ========== BASE ========== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--header-h); }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+em { font-style: italic; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--color-bg); }
+
+.skip {
+  position: absolute; left: var(--gutter); top: -100px; z-index: 100;
+  background: var(--color-primary); color: var(--color-bg);
+  padding: 12px 18px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); }
+
+/* ========== TIPOGRAFIA ========== */
+.label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+.display, .h2, .h3, .quote {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--color-text);
+}
+.display {
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72;
+}
+.h2 {
+  font-size: var(--text-h2);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 60;
+  text-wrap: balance;
+}
+.h3 {
+  font-size: var(--text-h3);
+  font-weight: 400;
+  line-height: 1.2;
+  font-variation-settings: "opsz" 28;
+}
+.lead { font-size: var(--text-lead); line-height: 1.55; color: var(--color-muted); }
+.muted { color: var(--color-muted); }
+.small { font-size: var(--text-small); line-height: 1.55; }
+.note { font-size: var(--text-small); line-height: 1.55; color: var(--color-muted); font-style: italic; }
+p + p { margin-top: 1em; }
+
+/* ========== AVISO DE DEMONSTRAÇÃO ========== */
+.demo-note {
+  background: var(--color-primary); color: var(--color-bg);
+  padding: 8px var(--gutter);
+  font-size: var(--text-small); line-height: 1.45; text-align: center;
+}
+
+/* ========== BOTÃO ========== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px;
+  padding: 13px 24px;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 2px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--dur-ui) ease, transform var(--dur-press) var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+.btn--light { background: var(--color-bg); color: var(--color-primary); }
+.btn[aria-disabled="true"] { pointer-events: none; }
+
+/* ========== CABEÇALHO ========== */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--color-bg);
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color var(--dur-ui) ease;
+}
+.header.is-scrolled { border-bottom-color: var(--color-line); }
+.header__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: var(--header-h);
+}
+.brand { text-decoration: none; display: inline-block; line-height: 1; }
+.brand__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.7875rem); /* 24 → 28,6 */
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  font-variation-settings: "opsz" 28;
+}
+.brand__sub {
+  display: block;
+  margin-top: 5px;
+  font-size: clamp(0.8125rem, 0.78rem + 0.15vw, 0.89375rem); /* 13 → 14,3 */
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+.nav { display: none; }
+.nav__list { display: flex; gap: clamp(20px, 2.4vw, 36px); }
+.nav__link {
+  position: relative;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  padding-block: 8px;
+}
+.nav__link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+.header__cta { display: none; }
+.menu-toggle {
+  min-height: 44px; padding: 8px 0 8px 12px;
+  font-size: 0.9375rem; font-weight: 500; letter-spacing: 0.02em;
+  transition: transform var(--dur-press) var(--ease-out);
+}
+.menu-toggle:active { transform: scale(0.97); }
+
+/* Menu mobile em tela cheia */
+.menu {
+  position: fixed; inset: 0; z-index: 40;
+  background: var(--color-bg);
+  padding: calc(var(--header-h) + 32px) var(--gutter) calc(32px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-direction: column; justify-content: space-between;
+  overflow-y: auto;
+  /* Fechado: invisível e fora da árvore de acessibilidade. Saída (160ms) mais rápida que a entrada (240ms). */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 160ms var(--ease-out), visibility 0s linear 160ms;
+}
+.menu > * { transform: translateY(-8px); transition: transform 160ms var(--ease-out); }
+.menu.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 240ms var(--ease-out), visibility 0s;
+}
+.menu.is-open > * { transform: none; transition-duration: 240ms; }
+.menu__list li { border-top: 1px solid var(--color-line); }
+.menu__list li:last-child { border-bottom: 1px solid var(--color-line); }
+.menu__link {
+  display: block; padding: 18px 0;
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 2.25rem; line-height: 1.1;
+  text-decoration: none;
+}
+.menu__foot { margin-top: 40px; display: grid; gap: 20px; }
+.menu__foot .btn { width: 100%; }
+
+body.menu-open { overflow: hidden; }
+
+@media (min-width: 1024px) {
+  .nav { display: block; }
+  .header__cta { display: inline-flex; }
+  .menu-toggle, .menu { display: none !important; }
+}
+
+/* ========== HERO ========== */
+.hero { container-type: inline-size; }
+.hero__grid {
+  --side: max(var(--gutter), (100cqw - var(--max)) / 2 + var(--gutter));
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.hero__media { aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-surface); }
+.hero__media img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 70% 50%;
+}
+.hero__text { padding: 40px var(--gutter) 0; }
+.hero__title { margin: 20px 0 24px; }
+.hero__lead { max-width: 32ch; margin-bottom: 32px; }
+.hero__sub { margin-top: 14px; }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero__media { aspect-ratio: 4 / 3; }
+  .hero__media img { object-position: 65% 18%; }
+}
+
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: calc(var(--side) + (100cqw - 2 * var(--side) + var(--col-gap)) * 5 / 12) 1fr;
+    align-items: end;
+    min-height: clamp(600px, calc(100svh - var(--header-h)), 900px);
+  }
+  .hero__text {
+    padding: 48px clamp(32px, 4vw, 72px) clamp(48px, 5vw, 80px) var(--side);
+  }
+  .hero__media {
+    order: 2;
+    position: relative;
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 600px;
+  }
+  .hero__media img { position: absolute; inset: 0; object-position: 70% 28%; }
+}
+
+/* ========== AUTORIDADE ========== */
+.authority { padding-top: var(--space-chain); }
+.authority__list {
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.authority__list li { padding: 14px 0; }
+.authority__list li + li { border-top: 1px solid var(--color-line); }
+
+@media (min-width: 768px) {
+  .authority__list { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+  .authority__list li:nth-child(2) { border-top: 0; }
+}
+@media (min-width: 1024px) {
+  .authority__list { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 0; padding: 22px 0; }
+  .authority__list li,
+  .authority__list li + li { padding: 2px var(--col-gap) 2px 0; border-top: 0; }
+  .authority__list li + li { padding-left: var(--col-gap); border-left: 1px solid var(--color-line); }
+}
+
+/* ========== FILOSOFIA ========== */
+.philosophy { padding-block: var(--space-breath); }
+.philosophy .label { grid-column: 1 / -1; margin-bottom: 24px; }
+.philosophy__body { grid-column: 1 / -1; }
+.philosophy__body p { max-width: 58ch; margin-top: 32px; }
+
+@media (min-width: 1024px) {
+  .philosophy .label { grid-column: 1 / 4; margin: 0; padding-top: 1.1em; }
+  .philosophy__body { grid-column: 5 / 13; }
+  .philosophy__body p { margin-top: 40px; margin-left: calc(100% / 8 * 2); }
+}
+
+/* ========== MÉTODO ========== */
+.method { padding-bottom: var(--space-content); }
+.method__head { grid-column: 1 / -1; margin-bottom: 48px; }
+.method__head .h2 { margin-top: 20px; }
+.method__list { grid-column: 1 / -1; counter-reset: step; }
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 8px 16px;
+  padding: 32px 0 36px;
+  border-top: 1px solid var(--color-line);
+}
+.step:last-child { border-bottom: 1px solid var(--color-line); }
+.step__n {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 2.25rem; line-height: 1;
+  color: var(--color-secondary-text);
+  font-variant-numeric: lining-nums;
+}
+.step .h3 { grid-column: 2; margin-bottom: 4px; padding-top: 4px; }
+.step p { grid-column: 2; color: var(--color-muted); max-width: 60ch; }
+
+@media (min-width: 1024px) {
+  .method__head { grid-column: 1 / 5; margin: 0; align-self: start; position: sticky; top: calc(var(--header-h) + 40px); }
+  .method__list { grid-column: 6 / 13; }
+  .step { grid-template-columns: 96px 1fr; gap: 0 24px; padding: 40px 0 48px; }
+  .step__n { font-size: 2.75rem; grid-row: 1 / 3; }
+}
+
+/* ========== TRATAMENTOS ========== */
+.treatments { background: var(--color-surface); padding-block: var(--space-content); }
+.treatments__head { grid-column: 1 / -1; }
+.treatments__head .h2 { margin: 20px 0 24px; }
+.treatments__head p { max-width: 40ch; }
+.treatments__media {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+  aspect-ratio: 3 / 4;
+  max-width: 420px;
+  overflow: hidden;
+  background: var(--color-line);
+}
+.treatments__media img { width: 100%; height: 100%; object-fit: cover; }
+.treatments__list { grid-column: 1 / -1; margin-top: 56px; border-bottom: 1px solid var(--color-line-strong); }
+.t-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 24px;
+  padding: 24px 0 26px;
+  border-top: 1px solid var(--color-line-strong);
+  text-decoration: none;
+  transition: border-top-color var(--dur-ui) ease;
+}
+.t-row .h3 { grid-column: 1; }
+.t-row__desc { grid-column: 1; color: var(--color-muted); max-width: 52ch; }
+.t-row__arrow {
+  grid-column: 2; grid-row: 1 / 3; align-self: center;
+  font-size: 1.25rem; line-height: 1;
+  color: var(--color-primary);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+.treatments__note { grid-column: 1 / -1; margin-top: 24px; }
+
+@media (min-width: 768px) {
+  .treatments__head { grid-column: 1 / 8; align-self: end; }
+  .treatments__media { grid-column: 9 / 13; margin-top: 0; max-width: none; }
+}
+@media (min-width: 1024px) {
+  .treatments__list { margin-top: 80px; }
+  .t-row {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--col-gap);
+    align-items: baseline;
+    padding: 30px 0 32px;
+  }
+  .t-row .h3 { grid-column: 1 / 5; }
+  .t-row__desc { grid-column: 6 / 12; }
+  .t-row__arrow { grid-column: 12 / 13; grid-row: auto; justify-self: end; align-self: baseline; }
+}
+
+/* ========== CORPO CLÍNICO ========== */
+.doctor { padding-block: var(--space-content); }
+.doctor__media {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-surface);
+  margin-bottom: 40px;
+}
+.doctor__media img { width: 100%; height: 100%; object-fit: cover; }
+.doctor__body { grid-column: 1 / -1; }
+.doctor__body .h2 { margin: 20px 0 10px; }
+.doctor__role { color: var(--color-muted); margin-bottom: 32px; }
+.doctor__bio { max-width: 60ch; }
+.creds { margin-top: 40px; border-top: 1px solid var(--color-line); }
+.creds li { padding: 12px 0; border-bottom: 1px solid var(--color-line); font-size: 0.9375rem; }
+.team { margin-top: 56px; }
+.team .label { margin-bottom: 16px; }
+.team li { padding: 14px 0; border-top: 1px solid var(--color-line); }
+.team li:last-child { border-bottom: 1px solid var(--color-line); }
+.team__name { display: block; font-weight: 500; }
+.team__meta { display: block; font-size: var(--text-small); color: var(--color-muted); }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .doctor__media { grid-column: 1 / 9; }
+}
+@media (min-width: 1024px) {
+  .doctor__body { grid-column: 1 / 7; grid-row: 1; }
+  .doctor__media { grid-column: 8 / 13; grid-row: 1; margin: 0; align-self: start; position: sticky; top: calc(var(--header-h) + 40px); }
+  .team ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+  .team li:nth-last-child(2) { border-bottom: 1px solid var(--color-line); }
+}
+
+/* ========== DEPOIMENTOS ========== */
+.testimonials { padding-block: var(--space-content); border-top: 1px solid var(--color-line); }
+.testimonials > .wrap > .label { margin-bottom: 40px; }
+.quote-main { grid-column: 1 / -1; }
+.quote-side { grid-column: 1 / -1; margin-top: 56px; display: grid; gap: 40px; }
+.quote {
+  font-size: var(--text-quote);
+  font-style: italic;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.quote em { font-style: normal; }
+.quote--small {
+  font-size: var(--text-h3);
+  line-height: 1.35;
+}
+.cite { display: block; margin-top: 20px; font-size: var(--text-small); color: var(--color-muted); font-style: normal; line-height: 1.5; }
+.cite b { font-weight: 500; color: var(--color-text); }
+.quote-side figure { padding-top: 28px; border-top: 1px solid var(--color-line); }
+.testimonials__note { grid-column: 1 / -1; margin-top: 56px; }
+
+@media (min-width: 1024px) {
+  .quote-main { grid-column: 1 / 8; }
+  .quote-main .quote { max-width: 22ch; }
+  .quote-side { grid-column: 9 / 13; margin-top: 0; gap: 48px; }
+  .testimonials__note { margin-top: 80px; }
+}
+
+/* ========== A CLÍNICA ========== */
+.clinic { padding-block: var(--space-breath) var(--space-content); }
+.clinic__head { grid-column: 1 / -1; }
+.clinic__head .h2 { margin-top: 20px; }
+.clinic__text { grid-column: 1 / -1; margin-top: 32px; }
+.clinic__text > p { max-width: 58ch; }
+.features { margin-top: 40px; display: grid; gap: 0; border-top: 1px solid var(--color-line); }
+.features li { padding: 18px 0; border-bottom: 1px solid var(--color-line); }
+.features b { font-weight: 500; }
+.clinic__photos { margin-top: 64px; row-gap: var(--col-gap); }
+.clinic__photos figure { overflow: hidden; background: var(--color-surface); }
+.clinic__photos img { width: 100%; height: 100%; object-fit: cover; }
+.ph-1 { grid-column: 1 / -1; aspect-ratio: 3 / 4; }
+.ph-1 img { object-position: 50% 70%; }
+.ph-2 { grid-column: 1 / 7; aspect-ratio: 4 / 5; }
+.ph-3 { grid-column: 7 / 13; aspect-ratio: 1 / 1; align-self: end; }
+
+@media (min-width: 768px) {
+  .features { grid-template-columns: 1fr 1fr; column-gap: var(--col-gap); }
+}
+@media (min-width: 1024px) {
+  .clinic__head { grid-column: 1 / 6; }
+  .clinic__text { grid-column: 7 / 13; margin-top: 0; padding-top: 2.2em; }
+  .clinic__photos { margin-top: 96px; }
+  .ph-1 { grid-column: 1 / 7; grid-row: 1 / 3; }
+  .ph-2 { grid-column: 8 / 11; grid-row: 1; }
+  .ph-3 { grid-column: 9 / 13; grid-row: 2; }
+}
+
+/* ========== DÚVIDAS ========== */
+.faq { background: var(--color-surface); padding-block: var(--space-content); }
+.faq__head { grid-column: 1 / -1; margin-bottom: 40px; }
+.faq__head .h2 { margin-top: 20px; }
+.faq__list { grid-column: 1 / -1; border-bottom: 1px solid var(--color-line-strong); }
+.faq details { border-top: 1px solid var(--color-line-strong); }
+.faq summary {
+  display: grid; grid-template-columns: 1fr 20px; gap: 24px; align-items: center;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.1875rem, 1.1rem + 0.35vw, 1.4375rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq__icon { position: relative; width: 20px; height: 20px; }
+.faq__icon::before, .faq__icon::after {
+  content: ""; position: absolute; left: 2px; right: 2px; top: 50%;
+  height: 1px; background: currentColor;
+}
+.faq__icon::after { transform: rotate(90deg); transition: transform 260ms var(--ease-out); }
+html:not(.js) .faq details[open] .faq__icon::after,
+.js .faq details.is-open .faq__icon::after { transform: rotate(0deg); }
+.faq__answer { padding: 0 44px 28px 0; color: var(--color-muted); max-width: 64ch; }
+
+/* Acordeão animado (com JS): altura por grid-template-rows 0fr → 1fr. Fecha mais rápido do que abre. */
+.js .faq__answer {
+  display: grid; grid-template-rows: 0fr;
+  padding-bottom: 0;
+  opacity: 0;
+  transition: grid-template-rows 200ms var(--ease-out), opacity 150ms ease;
+}
+.js .faq details.is-open .faq__answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows 260ms var(--ease-out), opacity 260ms var(--ease-out);
+}
+.js .faq__answer > p { min-height: 0; overflow: hidden; }
+.js .faq__answer > p::after { content: ""; display: block; height: 28px; }
+
+@media (min-width: 1024px) {
+  .faq__head { grid-column: 1 / 5; margin: 0; align-self: start; }
+  .faq__list { grid-column: 6 / 13; }
+  .faq summary { padding: 26px 0; }
+}
+
+/* ========== CTA FINAL ========== */
+.on-dark { background: var(--color-primary); color: var(--color-bg); }
+.on-dark .label, .on-dark .muted { color: var(--color-on-dark-muted); }
+.on-dark .h2 { color: var(--color-bg); }
+.cta { padding-block: var(--space-breath); }
+.cta__body { grid-column: 1 / -1; }
+.cta__body .h2 { margin: 24px 0 28px; max-width: 18ch; }
+.cta__body .lead { color: var(--color-on-dark-muted); max-width: 46ch; }
+.cta__actions { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px; }
+.cta__contacts { font-size: 0.9375rem; line-height: 1.6; }
+.cta__contacts span { white-space: nowrap; }
+
+@media (min-width: 1024px) {
+  .cta__body { grid-column: 3 / 12; }
+}
+
+/* ========== RODAPÉ ========== */
+.footer {
+  background: var(--color-primary-deep);
+  color: var(--color-bg);
+  padding: var(--space-content) 0 calc(40px + env(safe-area-inset-bottom, 0px));
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.footer .label { color: var(--color-on-dark-muted); margin-bottom: 14px; }
+.footer__muted { color: var(--color-on-dark-muted); }
+.footer__brand { grid-column: 1 / -1; margin-bottom: 48px; }
+.footer__brand .brand__sub { color: var(--color-on-dark-muted); }
+.footer__brand p { margin-top: 20px; font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.25rem; line-height: 1.35; max-width: 24ch; }
+.footer__col { grid-column: 1 / -1; margin-bottom: 36px; }
+.footer__col a { text-decoration: none; }
+.footer__nav li + li { margin-top: 4px; }
+.footer__legal {
+  grid-column: 1 / -1;
+  margin-top: 24px; padding-top: 32px;
+  border-top: 1px solid var(--color-on-dark-line);
+  display: grid; gap: 20px;
+  font-size: var(--text-small);
+  color: var(--color-on-dark-muted);
+}
+.footer__legal p { margin: 0; }
+.footer__legal b { font-weight: 500; color: var(--color-bg); }
+.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.footer__bottom a { text-underline-offset: 3px; }
+
+@media (min-width: 640px) {
+  .footer__col { grid-column: span 6; }
+}
+@media (min-width: 1024px) {
+  .footer__brand { grid-column: 1 / 4; grid-row: 1; margin: 0; }
+  .footer__col { grid-column: span 3; grid-row: 1 / 3; margin-bottom: 0; }
+  .footer__nav-col { grid-column: 1 / 4; grid-row: 2; margin-top: 40px; }
+  .footer__legal { margin-top: 80px; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); }
+  .footer__legal > :nth-child(1) { grid-column: 1 / 5; }
+  .footer__legal > :nth-child(2) { grid-column: 5 / 13; }
+  .footer__legal > :nth-child(3) { grid-column: 1 / -1; }
+}
+
+/* ========== CTA FIXO (MOBILE) ========== */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-line);
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: transform 200ms var(--ease-out), visibility 0s linear 200ms;
+}
+.sticky-cta.is-visible {
+  visibility: visible;
+  transform: none;
+  transition: transform 320ms var(--ease-out), visibility 0s;
+}
+.sticky-cta .btn { width: 100%; }
+@media (min-width: 1024px) { .sticky-cta { display: none !important; } }
+@media (max-width: 1023px) { body.has-sticky-cta .footer { padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px)); } }
+
+/* ========== HOVER (só em dispositivos com mouse) ========== */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { background: #15261F; }
+  .btn--light:hover { background: #FFFFFF; }
+  .nav__link:hover::after { transform: scaleX(1); }
+  .t-row:hover { border-top-color: var(--color-text); }
+  .t-row:hover .t-row__arrow { transform: translateX(4px); }
+  .footer__col a:hover { text-decoration: underline; text-underline-offset: 3px; }
+}
+
+/* ========== ENTRADAS (só com JS + IntersectionObserver: classe has-reveal no <html>) ========== */
+/* Texto: opacidade + translateY. O JS define --d (intervalo entre itens) e remove os atributos no fim. */
+.has-reveal [data-reveal] {
+  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.has-reveal [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(16px); }
+.has-reveal .hero [data-reveal]:not(.is-in) { transform: translateY(12px); }
+.hero__title .w { display: inline-block; }
+
+/* Assinatura: cortina de baixo para cima + imagem interna saindo de scale(1.08) */
+.has-reveal [data-curtain] {
+  clip-path: inset(0 0 0 0); /* "none" não interpola com inset() */
+  transition: clip-path var(--dur-curtain) var(--ease-in-out) var(--d, 0ms);
+}
+.has-reveal [data-curtain]:not(.is-in) { clip-path: inset(100% 0 0 0); }
+.has-reveal [data-curtain] img { transition: transform var(--dur-curtain) var(--ease-in-out) var(--d, 0ms); }
+.has-reveal [data-curtain]:not(.is-in) img { transform: scale(1.08); }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* ========== MOVIMENTO REDUZIDO: sem deslocamentos, só fades de opacidade (200ms) ========== */
+@media (prefers-reduced-motion: reduce) {
+  .has-reveal [data-reveal],
+  .has-reveal [data-curtain] { transition: opacity 200ms ease; }
+  .has-reveal [data-reveal]:not(.is-in),
+  .has-reveal .hero [data-reveal]:not(.is-in) { transform: none; }
+  .has-reveal [data-curtain]:not(.is-in) { clip-path: none; opacity: 0; }
+  .has-reveal [data-curtain] img,
+  .has-reveal [data-curtain]:not(.is-in) img { transform: none; transition: none; }
+
+  .btn:active, .menu-toggle:active { transform: none; }
+  .menu > *, .menu.is-open > * { transform: none; }
+  .t-row:hover .t-row__arrow { transform: none; }
+  .faq__icon::after { transition: none; }
+  .js .faq__answer,
+  .js .faq details.is-open .faq__answer { transition: opacity 200ms ease; }
+
+  .sticky-cta { transform: none; opacity: 0; transition: opacity 200ms ease, visibility 0s linear 200ms; }
+  .sticky-cta.is-visible { opacity: 1; transition: opacity 200ms ease, visibility 0s; }
+}
+</style>
+<script>
+  (function (c) { c.add('js'); if ('IntersectionObserver' in window) c.add('has-reveal'); })(document.documentElement.classList);
+</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<p class="demo-note">Projeto fictício de portfólio. A clínica, as profissionais, os registros, os depoimentos e os contatos são inventados; as fotos são de banco de imagens.</p>
+
+<header class="header" id="topo">
+  <div class="wrap header__inner">
+    <a class="brand" href="#topo" aria-label="Arantes — Medicina da Pele, voltar ao início">
+      <span class="brand__name">ARANTES</span>
+      <span class="brand__sub">Medicina da Pele</span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#metodo">Método</a></li>
+        <li><a class="nav__link" href="#tratamentos">Tratamentos</a></li>
+        <li><a class="nav__link" href="#clinica">Clínica</a></li>
+        <li><a class="nav__link" href="#duvidas">Dúvidas</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn header__cta" href="#agendar">Agendar avaliação</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <nav aria-label="Menu">
+    <ul class="menu__list">
+      <li><a class="menu__link" href="#metodo">Método</a></li>
+      <li><a class="menu__link" href="#tratamentos">Tratamentos</a></li>
+      <li><a class="menu__link" href="#clinica">Clínica</a></li>
+      <li><a class="menu__link" href="#duvidas">Dúvidas</a></li>
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn" href="#agendar">Agendar avaliação</a>
+    <p class="small muted">Alameda Lorena, 716 — Jardim Paulista<br>Atendimento apenas com hora marcada</p>
+  </div>
+</div>
+
+<main id="conteudo">
+
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__grid">
+      <div class="hero__media" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1746410848551-ca40cdb57674?auto=format&fit=crop&w=1400&q=80"
+          srcset="https://images.unsplash.com/photo-1746410848551-ca40cdb57674?auto=format&fit=crop&w=640&q=80 640w,
+                  https://images.unsplash.com/photo-1746410848551-ca40cdb57674?auto=format&fit=crop&w=1000&q=80 1000w,
+                  https://images.unsplash.com/photo-1746410848551-ca40cdb57674?auto=format&fit=crop&w=1400&q=80 1400w,
+                  https://images.unsplash.com/photo-1746410848551-ca40cdb57674?auto=format&fit=crop&w=1900&q=80 1900w"
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          width="3456" height="5184"
+          alt="Mulher de cerca de cinquenta anos olha pela janela, com a luz natural iluminando o rosto"
+          fetchpriority="high">
+      </div>
+      <div class="hero__text">
+        <p class="label" data-reveal>Jardins · São Paulo · Desde 2009</p>
+        <h1 class="display hero__title" id="hero-title" data-reveal>A pele envelhece. <em>Com critério,</em> envelhece bem.</h1>
+        <p class="lead hero__lead" data-reveal>Dermatologia dedicada à longevidade da pele: diagnóstico preciso, doses conservadoras e acompanhamento ao longo do ano.</p>
+        <a class="btn" href="#agendar" data-reveal>Agendar avaliação</a>
+        <p class="small muted hero__sub" data-reveal>Consulta diagnóstica de 90 minutos com dermatologista.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. AUTORIDADE -->
+  <section class="authority" aria-label="Credenciais da clínica">
+    <div class="wrap">
+      <ul class="authority__list">
+        <li data-reveal>Membro titular da Sociedade Brasileira de Dermatologia</li>
+        <li data-reveal>Três dermatologistas com título de especialista</li>
+        <li data-reveal>Dezesseis anos nos Jardins</li>
+        <li data-reveal>Atendimento apenas com hora marcada</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. FILOSOFIA -->
+  <section class="philosophy" aria-labelledby="filosofia-title">
+    <div class="wrap grid">
+      <p class="label" data-reveal>Filosofia</p>
+      <div class="philosophy__body">
+        <h2 class="h2" id="filosofia-title" data-reveal>Não tratamos a idade. <em>Cuidamos da pele que vai acompanhar você por décadas.</em></h2>
+        <p class="lead" data-reveal>Envelhecer não é um problema a corrigir. O que buscamos é uma pele saudável, firme e luminosa pelo máximo de tempo possível — com intervenções pequenas, bem indicadas e espaçadas. Quando o trabalho é bem feito, ninguém sabe dizer o que mudou. Só que você parece descansada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MÉTODO -->
+  <section class="method" id="metodo" aria-labelledby="metodo-title">
+    <div class="wrap grid">
+      <div class="method__head">
+        <p class="label" data-reveal>Método Arantes</p>
+        <h2 class="h2" id="metodo-title" data-reveal>Três tempos, <em>nenhuma pressa.</em></h2>
+      </div>
+      <ol class="method__list">
+        <li class="step" data-reveal>
+          <span class="step__n" aria-hidden="true">01</span>
+          <h3 class="h3">Diagnóstico</h3>
+          <p>Noventa minutos com uma de nossas dermatologistas. Conversamos sobre histórico, rotina e expectativas, examinamos a pele e fazemos o mapeamento por imagem. Você sai com um plano escrito para os próximos doze meses — e sem nenhum procedimento feito no mesmo dia.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__n" aria-hidden="true">02</span>
+          <h3 class="h3">Protocolo</h3>
+          <p>Cada plano combina o que a sua pele pede, e nada além disso: tecnologias, injetáveis e cuidados em casa, em doses conservadoras e em sessões distribuídas ao longo dos meses. Preferimos chegar ao resultado aos poucos a precisar desfazer um excesso.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__n" aria-hidden="true">03</span>
+          <h3 class="h3">Manutenção</h3>
+          <p>Revisões programadas a cada três ou quatro meses, com nova imagem comparativa para acompanhar a evolução. O plano é ajustado conforme a pele responde, a estação muda e a vida acontece.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. TRATAMENTOS -->
+  <section class="treatments" id="tratamentos" aria-labelledby="tratamentos-title">
+    <div class="wrap grid">
+      <div class="treatments__head">
+        <p class="label" data-reveal>Tratamentos</p>
+        <h2 class="h2" id="tratamentos-title" data-reveal>O que usamos, <em>e para quê.</em></h2>
+        <p class="muted" data-reveal>Nenhum tratamento é oferecido isoladamente. Todos partem da avaliação diagnóstica.</p>
+      </div>
+      <figure class="treatments__media" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1603401712778-ab0575182f12?auto=format&fit=crop&w=900&h=1200&q=80"
+          srcset="https://images.unsplash.com/photo-1603401712778-ab0575182f12?auto=format&fit=crop&w=480&h=640&q=80 480w,
+                  https://images.unsplash.com/photo-1603401712778-ab0575182f12?auto=format&fit=crop&w=900&h=1200&q=80 900w"
+          sizes="(min-width: 768px) 30vw, 420px"
+          width="900" height="1200" loading="lazy" decoding="async"
+          alt="Três amostras de creme sobre a pele do antebraço, com fundo de linho">
+      </figure>
+
+      <ul class="treatments__list">
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Bioestimuladores de colágeno</h3>
+          <p class="t-row__desc">Perda de firmeza e de sustentação. O efeito é gradual e aparece ao longo de meses.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Ultrassom microfocado</h3>
+          <p class="t-row__desc">Flacidez leve a moderada de rosto e pescoço, sem cortes e sem afastamento da rotina.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Laser e radiofrequência</h3>
+          <p class="t-row__desc">Textura, poros, manchas e linhas finas; uniformidade do tom.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Toxina botulínica</h3>
+          <p class="t-row__desc">Linhas de expressão da testa e ao redor dos olhos, com doses que preservam o movimento.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Ácido hialurônico</h3>
+          <p class="t-row__desc">Reposição pontual de volume e hidratação profunda, sempre em pequenas quantidades.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+        <li data-reveal><a class="t-row" href="#agendar">
+          <h3 class="h3">Skincare médico</h3>
+          <p class="t-row__desc">Rotina prescrita para casa, que sustenta e prolonga os resultados dos procedimentos.</p>
+          <span class="t-row__arrow" aria-hidden="true">→</span>
+        </a></li>
+      </ul>
+      <p class="note treatments__note" data-reveal>Indicação, número de sessões e intervalos são definidos em consulta. Resultados variam de pessoa para pessoa.</p>
+    </div>
+  </section>
+
+  <!-- 6. CORPO CLÍNICO -->
+  <section class="doctor" id="corpo-clinico" aria-labelledby="medica-title">
+    <div class="wrap grid">
+      <figure class="doctor__media" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1758691737583-e4cbfbc78377?auto=format&fit=crop&crop=faces&w=1000&h=1250&q=80"
+          srcset="https://images.unsplash.com/photo-1758691737583-e4cbfbc78377?auto=format&fit=crop&crop=faces&w=560&h=700&q=80 560w,
+                  https://images.unsplash.com/photo-1758691737583-e4cbfbc78377?auto=format&fit=crop&crop=faces&w=1000&h=1250&q=80 1000w"
+          sizes="(min-width: 1024px) 40vw, (min-width: 768px) 66vw, 100vw"
+          width="1000" height="1250" loading="lazy" decoding="async"
+          alt="Retrato da Dra. Helena Arantes, dermatologista, de blusa branca, no consultório">
+      </figure>
+      <div class="doctor__body">
+        <p class="label" data-reveal>Corpo clínico</p>
+        <h2 class="h2" id="medica-title" data-reveal>Dra. Helena Arantes</h2>
+        <p class="doctor__role" data-reveal>Dermatologista, fundadora e responsável técnica</p>
+        <p class="doctor__bio" data-reveal>Helena abriu a clínica em 2009 com uma ideia que parecia contraintuitiva na época: fazer menos, e melhor. Antes disso, passou dez anos entre o hospital universitário e o consultório, atendendo principalmente pacientes com pele sensível e com sequelas de procedimentos mal indicados. Foi dali que veio o critério que orienta a clínica até hoje.</p>
+
+        <ul class="creds" aria-label="Formação e registros" data-reveal>
+          <li>Graduação em Medicina pela Faculdade de Medicina da Universidade de São Paulo</li>
+          <li>Residência em Dermatologia no Hospital das Clínicas da FMUSP</li>
+          <li>Membro titular da Sociedade Brasileira de Dermatologia</li>
+          <li>Especialização em Cosmiatria e Laser</li>
+          <li>CRM-SP 00.000 · RQE 00.000</li>
+        </ul>
+
+        <div class="team" data-reveal>
+          <h3 class="label">Equipe</h3>
+          <ul>
+            <li><span class="team__name">Dra. Marina Toledo</span><span class="team__meta">Dermatologista · CRM-SP 00.000 · RQE 00.000</span></li>
+            <li><span class="team__name">Dra. Camila Reis</span><span class="team__meta">Dermatologista · CRM-SP 00.000 · RQE 00.000</span></li>
+            <li><span class="team__name">Luísa Prado</span><span class="team__meta">Enfermeira especialista em Dermatologia · COREN-SP 000.000</span></li>
+            <li><span class="team__name">Renata Alves</span><span class="team__meta">Enfermeira especialista em Dermatologia · COREN-SP 000.000</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DEPOIMENTOS -->
+  <section class="testimonials" aria-labelledby="pacientes-title">
+    <div class="wrap">
+      <h2 class="label" id="pacientes-title" data-reveal>Pacientes</h2>
+      <div class="grid">
+        <figure class="quote-main" data-reveal>
+          <blockquote class="quote">
+            <p>“Na primeira consulta, a Dra. Helena me disse o que <em>não</em> faria no meu rosto. Foi a primeira vez que alguém me falou isso. Três anos depois, continuo aqui — e ninguém nunca me perguntou o que eu fiz. Me perguntam se eu tirei férias.”</p>
+          </blockquote>
+          <figcaption class="cite"><b>Beatriz M.</b>, 54 anos, arquiteta</figcaption>
+        </figure>
+        <div class="quote-side">
+          <figure data-reveal>
+            <blockquote class="quote quote--small">
+              <p>“Eu tinha medo de ficar com cara de procedimento. O plano veio por escrito, com tudo explicado, e cada etapa foi no meu tempo.”</p>
+            </blockquote>
+            <figcaption class="cite"><b>Cláudia R.</b>, 47 anos, advogada</figcaption>
+          </figure>
+          <figure data-reveal>
+            <blockquote class="quote quote--small">
+              <p>“Viajo muito a trabalho e não posso ficar marcada. Aqui tudo é agendado com antecedência e pensando na minha agenda.”</p>
+            </blockquote>
+            <figcaption class="cite"><b>Denise F.</b>, 59 anos, executiva do setor financeiro</figcaption>
+          </figure>
+        </div>
+        <p class="note testimonials__note" data-reveal>Depoimentos sobre a experiência de atendimento, com nomes abreviados a pedido das pacientes. Resultados variam de pessoa para pessoa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. A CLÍNICA -->
+  <section class="clinic" id="clinica" aria-labelledby="clinica-title">
+    <div class="wrap grid">
+      <div class="clinic__head">
+        <p class="label" data-reveal>A clínica</p>
+        <h2 class="h2" id="clinica-title" data-reveal>Uma paciente por vez, <em>com tempo.</em></h2>
+      </div>
+      <div class="clinic__text">
+        <p class="lead" data-reveal>A clínica ocupa uma casa reformada na Alameda Lorena, no Jardim Paulista. Os horários são espaçados para que você não cruze com outras pacientes na recepção, e cada atendimento acontece em sala privativa, do começo ao fim.</p>
+        <ul class="features" data-reveal>
+          <li><b>Hora marcada.</b> Não trabalhamos com encaixes. O seu horário é só seu.</li>
+          <li><b>Sala privativa.</b> Consulta, procedimento e recuperação no mesmo ambiente.</li>
+          <li><b>Discrição.</b> Entrada reservada e estacionamento com manobrista no local.</li>
+          <li><b>Acompanhamento.</b> Contato direto com a equipe de enfermagem nos dias seguintes a cada procedimento.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap grid clinic__photos">
+      <figure class="ph-1" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1731514709874-30eead90613b?auto=format&fit=crop&w=1200&h=1600&q=80"
+          srcset="https://images.unsplash.com/photo-1731514709874-30eead90613b?auto=format&fit=crop&w=640&h=853&q=80 640w,
+                  https://images.unsplash.com/photo-1731514709874-30eead90613b?auto=format&fit=crop&w=1200&h=1600&q=80 1200w"
+          sizes="(min-width: 1024px) 48vw, 100vw"
+          width="1200" height="1600" loading="lazy" decoding="async"
+          alt="Corredor da clínica com arcos brancos, bancadas e cadeiras de madeira">
+      </figure>
+      <figure class="ph-2" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1763279934323-edb3735f6a6e?auto=format&fit=crop&w=800&h=1000&q=80"
+          srcset="https://images.unsplash.com/photo-1763279934323-edb3735f6a6e?auto=format&fit=crop&w=480&h=600&q=80 480w,
+                  https://images.unsplash.com/photo-1763279934323-edb3735f6a6e?auto=format&fit=crop&w=800&h=1000&q=80 800w"
+          sizes="(min-width: 1024px) 24vw, 50vw"
+          width="800" height="1000" loading="lazy" decoding="async"
+          alt="Poltrona de linho claro na sala de recuperação">
+      </figure>
+      <figure class="ph-3" data-curtain>
+        <img
+          src="https://images.unsplash.com/photo-1770731206301-43a9683f3438?auto=format&fit=crop&w=900&h=900&q=80"
+          srcset="https://images.unsplash.com/photo-1770731206301-43a9683f3438?auto=format&fit=crop&w=480&h=480&q=80 480w,
+                  https://images.unsplash.com/photo-1770731206301-43a9683f3438?auto=format&fit=crop&w=900&h=900&q=80 900w"
+          sizes="(min-width: 1024px) 32vw, 50vw"
+          width="900" height="900" loading="lazy" decoding="async"
+          alt="Toalhas de linho e xícaras de cerâmica sobre mesa de madeira junto à janela">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 9. DÚVIDAS -->
+  <section class="faq" id="duvidas" aria-labelledby="duvidas-title">
+    <div class="wrap grid">
+      <div class="faq__head">
+        <p class="label" data-reveal>Dúvidas</p>
+        <h2 class="h2" id="duvidas-title" data-reveal>Perguntas frequentes</h2>
+      </div>
+      <div class="faq__list">
+        <details data-reveal>
+          <summary>Preciso passar pela avaliação antes de qualquer procedimento?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Sim. Nenhum tratamento é feito sem a avaliação diagnóstica, mesmo para quem já faz procedimentos em outro lugar. É nela que entendemos a sua pele, o seu histórico e o que faz sentido — inclusive o que não faz.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Vou ficar com aparência artificial?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Esse é justamente o cuidado central do nosso método. Trabalhamos com doses conservadoras e resultados construídos ao longo de meses, preservando a expressão. Quando há dúvida entre fazer mais ou menos, fazemos menos.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Quanto tempo de recuperação é preciso?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Depende do tratamento. A maioria permite voltar à rotina no mesmo dia; alguns lasers pedem de dois a cinco dias de cuidados e sem exposição ao sol. Todos os procedimentos são planejados com antecedência, respeitando a sua agenda.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Quem realiza os procedimentos?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Todos os procedimentos injetáveis e com tecnologias são feitos pelas médicas dermatologistas da clínica, com o apoio de enfermeiras especializadas. Usamos apenas produtos e equipamentos aprovados pela Anvisa.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Como a clínica garante discrição?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Os horários são espaçados para evitar encontros na recepção, há entrada reservada e estacionamento no local. Não publicamos imagens nem nomes de pacientes, e o seu prontuário é protegido conforme a LGPD e o sigilo médico.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Quanto custa?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Os valores dependem do plano indicado para cada pessoa e são informados no primeiro contato, junto com a explicação do que está incluído na avaliação. Depois da consulta, o plano escrito traz a estimativa completa para os doze meses.</p></div>
+        </details>
+        <details data-reveal>
+          <summary>Como agendar e o que levar?<span class="faq__icon" aria-hidden="true"></span></summary>
+          <div class="faq__answer"><p>Pelo telefone, pelo WhatsApp ou pelo botão desta página. Na consulta, traga a lista de medicamentos em uso e, se tiver, informações sobre procedimentos anteriores. Venha sem maquiagem, se possível.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA FINAL -->
+  <section class="cta on-dark" id="agendar" aria-labelledby="agendar-title">
+    <div class="wrap grid">
+      <div class="cta__body">
+        <p class="label" data-reveal>Avaliação diagnóstica</p>
+        <h2 class="h2" id="agendar-title" data-reveal>A primeira conversa é um diagnóstico, <em>não uma venda.</em></h2>
+        <p class="lead" data-reveal>Noventa minutos com uma dermatologista, mapeamento da pele por imagem e um plano escrito para os próximos doze meses.</p>
+        <div class="cta__actions" data-reveal>
+          <span class="btn btn--light" aria-disabled="true">Agendar avaliação</span>
+          <p class="cta__contacts muted">Site de demonstração: o agendamento está desativado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 11. RODAPÉ -->
+<footer class="footer on-dark">
+  <div class="wrap grid">
+    <div class="footer__brand">
+      <span class="brand">
+        <span class="brand__name">ARANTES</span>
+        <span class="brand__sub">Medicina da Pele</span>
+      </span>
+      <p>Longevidade da pele, com critério médico.</p>
+    </div>
+
+    <div class="footer__col footer__col--wide">
+      <h2 class="label">Endereço</h2>
+      <address style="font-style: normal;">
+        Alameda Lorena, 716 — Jardim Paulista<br>
+        São Paulo – SP, 01424-002<br>
+        <span class="footer__muted">Estacionamento com manobrista no local</span>
+      </address>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="label">Horários</h2>
+      <p>Segunda a sexta, das 8h às 20h<br>Sábado, das 8h às 14h</p>
+      <p class="footer__muted" style="margin-top: 0;">Atendimento apenas com hora marcada</p>
+    </div>
+
+    <div class="footer__col footer__col--wide">
+      <h2 class="label">Contato</h2>
+      <p>Telefone (11) 0000-0000<br>WhatsApp (11) 00000-0000<br>contato@arantesdermato.zevro.app</p>
+    </div>
+
+    <nav class="footer__col footer__nav-col" aria-label="Rodapé">
+      <h2 class="label">Navegação</h2>
+      <ul class="footer__nav">
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#clinica">Clínica</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+        <li><a href="#agendar">Agendar avaliação</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__legal">
+      <p><b>Responsável técnica</b><br>Dra. Helena Arantes — Dermatologista · CRM-SP 00.000 · RQE 00.000</p>
+      <p><b>Aviso médico</b><br>As informações desta página têm caráter informativo e não substituem a consulta médica. A indicação de qualquer tratamento depende de avaliação individual, e os resultados variam de pessoa para pessoa. Arantes Medicina da Pele Ltda. · CNPJ 00.000.000/0000-00</p>
+      <div class="footer__bottom">
+        <span>© 2026 Arantes — Medicina da Pele. Projeto fictício de portfólio.</span>
+        <a href="privacidade.html">Política de privacidade</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn" href="#agendar">Agendar avaliação</a>
+</div>
+
+<script>
+(function () {
+  var header = document.querySelector('.header');
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('menu');
+  var stickyCta = document.querySelector('.sticky-cta');
+  var hero = document.querySelector('.hero');
+  var cta = document.getElementById('agendar');
+
+  // Fio do cabeçalho ao rolar
+  var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Menu mobile (a transição fica no CSS: .menu.is-open)
+  function isMenuOpen() { return menu.classList.contains('is-open'); }
+  // Com o menu aberto, o conteúdo coberto sai da ordem de foco (o Tab não escapa para trás do menu)
+  var behindMenu = [document.querySelector('.skip'), document.getElementById('conteudo'), document.querySelector('.footer'), stickyCta];
+  function setMenu(open) {
+    behindMenu.forEach(function (el) { el.inert = open; });
+    if (open) menu.style.paddingTop = (header.getBoundingClientRect().bottom + 32) + 'px';
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? 'Fechar' : 'Menu';
+    document.body.classList.toggle('menu-open', open);
+  }
+  toggle.addEventListener('click', function () { setMenu(!isMenuOpen()); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isMenuOpen()) { setMenu(false); toggle.focus(); }
+  });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+
+  // Acordeão: abre na hora e anima a altura; ao fechar, anima e só depois remove o [open]
+  document.querySelectorAll('.faq details').forEach(function (item) {
+    var timer;
+    item.querySelector('summary').addEventListener('click', function (e) {
+      e.preventDefault();
+      clearTimeout(timer);
+      if (item.classList.contains('is-open')) {
+        item.classList.remove('is-open');
+        timer = setTimeout(function () { item.open = false; }, reduce.matches ? 0 : 200);
+      } else {
+        item.open = true;
+        void item.offsetHeight; // aplica o estado fechado antes de animar
+        item.classList.add('is-open');
+      }
+    });
+    // Aberto por fora do clique (ex.: busca do navegador): sincroniza a classe
+    item.addEventListener('toggle', function () {
+      if (item.open && !item.classList.contains('is-open')) item.classList.add('is-open');
+      if (!item.open) item.classList.remove('is-open');
+    });
+  });
+
+  // CTA fixo no mobile: aparece depois do hero e some quando a seção de agendamento está na tela
+  if ('IntersectionObserver' in window) {
+    var heroVisible = true, ctaVisible = false;
+    var update = function () {
+      var show = !heroVisible && !ctaVisible;
+      stickyCta.classList.toggle('is-visible', show);
+      document.body.classList.toggle('has-sticky-cta', show);
+    };
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === cta) ctaVisible = entry.isIntersecting;
+      });
+      update();
+    }).observe(hero);
+    new IntersectionObserver(function (entries) {
+      ctaVisible = entries[0].isIntersecting; update();
+    }).observe(cta);
+  }
+
+  // ---------- Entradas ----------
+  if (!document.documentElement.classList.contains('has-reveal')) return;
+
+  var REVEAL = 700, CURTAIN = 1100, FADE = 200;
+
+  // Terminada a entrada, o elemento volta ao estado normal (sem atributos nem atraso herdado)
+  function cleanup(el, after) {
+    setTimeout(function () {
+      el.removeAttribute('data-reveal');
+      el.removeAttribute('data-curtain');
+      el.classList.remove('is-in');
+      el.style.removeProperty('--d');
+      if (!el.getAttribute('style')) el.removeAttribute('style');
+    }, after + 50);
+  }
+
+  function play(el, delay) {
+    var dur = reduce.matches ? FADE : (el.hasAttribute('data-curtain') ? CURTAIN : REVEAL);
+    if (reduce.matches) delay = 0;
+    el.style.setProperty('--d', delay + 'ms');
+    el.classList.add('is-in');
+    cleanup(el, dur + delay);
+  }
+
+  // A cortina só abre com a imagem já decodificada, para não revelar um bloco vazio
+  function whenImageReady(figure, fn) {
+    var img = figure.querySelector('img');
+    if (!img || (img.complete && img.naturalWidth)) return fn();
+    if (img.loading === 'lazy') img.loading = 'eager';
+    if (img.decode) img.decode().then(fn, fn);
+    else { img.addEventListener('load', fn, { once: true }); img.addEventListener('error', fn, { once: true }); }
+  }
+
+  // Seções: cada bloco entra uma vez; os que entram juntos ganham intervalo de 50ms
+  var io = new IntersectionObserver(function (entries) {
+    var n = 0;
+    entries.forEach(function (entry) {
+      var el = entry.target;
+      var above = entry.boundingClientRect.bottom < 0;
+      if (!entry.isIntersecting && !above) return;
+      io.unobserve(el);
+      var delay = above ? 0 : Math.min(n++, 6) * 50;
+      if (el.hasAttribute('data-curtain')) whenImageReady(el, function () { play(el, delay); });
+      else play(el, delay);
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+
+  document.querySelectorAll('[data-reveal], [data-curtain]').forEach(function (el) {
+    if (!el.closest('.hero__text')) io.observe(el);
+  });
+
+  // Hero: título entra linha a linha (60ms), depois o restante do bloco
+  var heroText = document.querySelector('.hero__text');
+  var title = heroText.querySelector('.hero__title');
+
+  function splitIntoLines(el) {
+    var words = [];
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        if (child.nodeType === 1) return walk(child);
+        if (child.nodeType !== 3) return;
+        var frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) return frag.appendChild(document.createTextNode(part));
+          var w = document.createElement('span');
+          w.className = 'w';
+          w.setAttribute('data-reveal', '');
+          w.textContent = part;
+          frag.appendChild(w);
+          words.push(w);
+        });
+        node.replaceChild(frag, child);
+      });
+    })(el);
+    var lines = [], top = null;
+    words.forEach(function (w) {
+      if (top === null || Math.abs(w.offsetTop - top) > 4) { lines.push([]); top = w.offsetTop; }
+      lines[lines.length - 1].push(w);
+    });
+    return lines;
+  }
+
+  function playHero() {
+    var original = title.innerHTML;
+    var queue = [];
+    heroText.querySelectorAll('[data-reveal]').forEach(function (el) {
+      if (el === title && !reduce.matches) {
+        el.removeAttribute('data-reveal');
+        splitIntoLines(el).forEach(function (line) { queue.push(line); });
+      } else {
+        queue.push([el]);
+      }
+    });
+    void heroText.offsetHeight; // aplica o estado inicial antes de animar
+    queue.forEach(function (group, i) {
+      group.forEach(function (el) {
+        if (el.classList.contains('w')) { el.style.setProperty('--d', i * 60 + 'ms'); el.classList.add('is-in'); }
+        else play(el, i * 60);
+      });
+    });
+    // Devolve o título ao HTML original quando a última linha termina
+    setTimeout(function () { title.innerHTML = original; }, queue.length * 60 + REVEAL + 50);
+  }
+
+  // Espera a Newsreader para medir as linhas certas (no máximo 700ms)
+  var fonts = document.fonts && document.fonts.load
+    ? Promise.all([document.fonts.load('300 1em Newsreader'), document.fonts.load('italic 300 1em Newsreader')])
+    : Promise.resolve();
+  var played = false;
+  var startHero = function () { if (!played) { played = true; playHero(); } };
+  fonts.then(startHero, startHero);
+  setTimeout(startHero, 700);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://arantesdermato.zevro.app/#clinica",
+      "name": "Arantes — Medicina da Pele",
+      "legalName": "Arantes Medicina da Pele Ltda.",
+      "description": "Projeto fictício de portfólio. Clínica de dermatologia nos Jardins, em São Paulo, dedicada à longevidade da pele: avaliação diagnóstica de 90 minutos, doses conservadoras e acompanhamento ao longo do ano.",
+      "url": "https://arantesdermato.zevro.app/",
+      "logo": "https://arantesdermato.zevro.app/icon-512.png",
+      "image": "https://arantesdermato.zevro.app/og-image.jpg",
+      "email": "contato@arantesdermato.zevro.app",
+      "foundingDate": "2009",
+      "medicalSpecialty": "Dermatology",
+      "isAcceptingNewPatients": true,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alameda Lorena, 716",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01424-002",
+        "addressCountry": "BR"
+      },
+      "areaServed": { "@type": "City", "name": "São Paulo" },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00" }
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "Avaliação diagnóstica dermatológica" },
+        { "@type": "MedicalProcedure", "name": "Bioestimuladores de colágeno" },
+        { "@type": "MedicalProcedure", "name": "Ultrassom microfocado" },
+        { "@type": "MedicalProcedure", "name": "Laser e radiofrequência" },
+        { "@type": "MedicalProcedure", "name": "Toxina botulínica" },
+        { "@type": "MedicalProcedure", "name": "Ácido hialurônico" },
+        { "@type": "MedicalProcedure", "name": "Skincare médico" }
+      ],
+      "founder": { "@id": "https://arantesdermato.zevro.app/#helena-arantes" },
+      "employee": [
+        { "@id": "https://arantesdermato.zevro.app/#helena-arantes" },
+        { "@type": ["Person", "Physician"], "name": "Dra. Marina Toledo", "medicalSpecialty": "Dermatology" },
+        { "@type": ["Person", "Physician"], "name": "Dra. Camila Reis", "medicalSpecialty": "Dermatology" }
+      ]
+    },
+    {
+      "@type": ["Person", "Physician"],
+      "@id": "https://arantesdermato.zevro.app/#helena-arantes",
+      "name": "Dra. Helena Arantes",
+      "description": "Dermatologista, fundadora e responsável técnica da Arantes — Medicina da Pele.",
+      "medicalSpecialty": "Dermatology",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Faculdade de Medicina da Universidade de São Paulo" },
+      "memberOf": { "@type": "MedicalOrganization", "name": "Sociedade Brasileira de Dermatologia" },
+      "worksFor": { "@id": "https://arantesdermato.zevro.app/#clinica" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://arantesdermato.zevro.app/#duvidas",
+      "mainEntity": [
+        { "@type": "Question", "name": "Preciso passar pela avaliação antes de qualquer procedimento?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Nenhum tratamento é feito sem a avaliação diagnóstica, mesmo para quem já faz procedimentos em outro lugar. É nela que entendemos a sua pele, o seu histórico e o que faz sentido — inclusive o que não faz." } },
+        { "@type": "Question", "name": "Vou ficar com aparência artificial?", "acceptedAnswer": { "@type": "Answer", "text": "Esse é justamente o cuidado central do nosso método. Trabalhamos com doses conservadoras e resultados construídos ao longo de meses, preservando a expressão. Quando há dúvida entre fazer mais ou menos, fazemos menos." } },
+        { "@type": "Question", "name": "Quanto tempo de recuperação é preciso?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do tratamento. A maioria permite voltar à rotina no mesmo dia; alguns lasers pedem de dois a cinco dias de cuidados e sem exposição ao sol. Todos os procedimentos são planejados com antecedência, respeitando a sua agenda." } },
+        { "@type": "Question", "name": "Quem realiza os procedimentos?", "acceptedAnswer": { "@type": "Answer", "text": "Todos os procedimentos injetáveis e com tecnologias são feitos pelas médicas dermatologistas da clínica, com o apoio de enfermeiras especializadas. Usamos apenas produtos e equipamentos aprovados pela Anvisa." } },
+        { "@type": "Question", "name": "Como a clínica garante discrição?", "acceptedAnswer": { "@type": "Answer", "text": "Os horários são espaçados para evitar encontros na recepção, há entrada reservada e estacionamento no local. Não publicamos imagens nem nomes de pacientes, e o seu prontuário é protegido conforme a LGPD e o sigilo médico." } },
+        { "@type": "Question", "name": "Quanto custa?", "acceptedAnswer": { "@type": "Answer", "text": "Os valores dependem do plano indicado para cada pessoa e são informados no primeiro contato, junto com a explicação do que está incluído na avaliação. Depois da consulta, o plano escrito traz a estimativa completa para os doze meses." } },
+        { "@type": "Question", "name": "Como agendar e o que levar?", "acceptedAnswer": { "@type": "Answer", "text": "Pelo telefone, pelo WhatsApp ou pelo botão desta página. Na consulta, traga a lista de medicamentos em uso e, se tiver, informações sobre procedimentos anteriores. Venha sem maquiagem, se possível." } }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>
